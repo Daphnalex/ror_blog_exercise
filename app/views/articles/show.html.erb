@@ -1,0 +1,23 @@
+<header class="masthead" style="background-image: url('<%= @article.image %>')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1><%= @article.title %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 mx-auto">
+      <%= @article.content.html_safe %>
+    </div>
+  </div>
+</div>
+<br/>
+<div>
+  <a href="/"> < Retour à l'index</a>
+</div>
