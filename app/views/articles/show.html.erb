@@ -12,6 +12,21 @@
 </header>
 <div class="container">
   <div class="row">
+    <div class="col-lg-7 col-md-6 buttonStyle">
+    </div>
+    <div class="col-lg-6 col-md-6 buttonStyle">
+      <div class="btn btn-outline-info">
+        <%= link_to 'Editer', edit_article_path(@article.id), :class => "btn" %>
+      </div>
+      <div class="btn btn-outline-dark">
+        <%= link_to 'Supprimer', article_path(@article.id), :class => "btn", :method => :delete %>
+      </div>
+    </div>
+  </div>
+</div>
+<br/>
+<div class="container">
+  <div class="row">
     <div class="col-lg-10 col-md-10 mx-auto">
       <%= @article.content.html_safe %>
     </div>
