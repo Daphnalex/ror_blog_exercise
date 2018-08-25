@@ -25,7 +25,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <% @articles.each do |article| %>
-              <a class="dropdown-item" href="/articles/<%= article.id %>"><%= article.title %></a>
+              <a class="dropdown-item" href="<%= article_path(article.id) %>"><%= article.title %></a>
             <% end %>
           </div>
         </li>
@@ -34,7 +34,7 @@
     <div class="navbar-collapse rigth">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/new">ADMIN</a>
+                <a class="nav-link" href="<%= new_article_path %>">ADMIN</a>
             </li>
         </ul>
     </div>
