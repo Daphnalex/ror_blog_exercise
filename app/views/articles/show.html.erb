@@ -33,6 +33,45 @@
   </div>
 </div>
 <br/>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 mx-auto">
+      <h2>Ajouter un commentaire</h2>
+      <%= form_for [@article, @comment] do |c| %>
+        <%= c.hidden_field :article_id, :value => @article.id %>
+        <div class='field'>
+          <%= c.label :auteur %>
+          <br/>
+          <%= c.text_field :author %>
+        </div>
+        <div class='field'>
+          <%= c.label :commentaire %>
+          </br>
+            <%= c.text_area :content %>
+        </div>
+        <div class='validateComment'>
+          <%= c.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-md-10 mx-auto">
+      <% @comments.each do |comment| %>
+        <div class="jumbotron">
+          <div class="container">
+            <p><%=comment.content%></p>
+            <div class="author"><%=comment.author%></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br/>
 <div>
   <a href="/"> < Retour à l'index</a>
 </div>

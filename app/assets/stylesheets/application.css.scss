@@ -439,3 +439,19 @@ footer .copyright {
 img {
   width: 100%;
 }
+
+div.field input, div.field textarea{
+  width: 100%;
+}
+
+div.validateComment input{
+  float: right;
+}
+
+div.author {
+  font-style: italic;
+  text-align: right;
+}
+.jumbotron {
+  padding: 20px;
+}

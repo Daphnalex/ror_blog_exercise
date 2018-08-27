@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-
   before_action :get_all_articles
 
   def index
@@ -7,6 +6,10 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    puts "toto"
+    puts @article.comments.inspect
+    @comment = Comment.new
+    @comments = @article.comments
   end
 
   def new
@@ -33,7 +36,10 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    Article.find(params[:id]).destroy
+    @article = Article.find(params[:id])
+    @comments = @article.comments
+    @article.destroy
+    @comments.destroy
     redirect_to root_path
   end
 
